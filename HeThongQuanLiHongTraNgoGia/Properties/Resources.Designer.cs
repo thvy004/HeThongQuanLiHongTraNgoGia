@@ -83,6 +83,16 @@ namespace HeThongQuanLiHongTraNgoGia.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap htng {
+            get {
+                object obj = ResourceManager.GetObject("htng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap images__2__removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("images__2_-removebg-preview", resourceCulture);

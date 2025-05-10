@@ -34,18 +34,18 @@ namespace HeThongQuanLiHongTraNgoGia
             this.cashierOrderForm_menuTable = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cashierOrderForm_clearBtn = new System.Windows.Forms.Button();
-            this.cashierOrderForm_removeBtn = new System.Windows.Forms.Button();
-            this.cashierOrderForm_addBtn = new System.Windows.Forms.Button();
+            this.btnLamMoi = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.cashierOrderForm_price = new System.Windows.Forms.Label();
-            this.cashierOrderForm_prodName = new System.Windows.Forms.Label();
-            this.cashierOrderForm_SoLuong = new System.Windows.Forms.NumericUpDown();
+            this.lblDonGia = new System.Windows.Forms.Label();
+            this.lblTenSanPham = new System.Windows.Forms.Label();
+            this.numSoLuong = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cashierOrderForm_productID = new System.Windows.Forms.ComboBox();
+            this.cbSanPham = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cashierOrderForm_Type = new System.Windows.Forms.ComboBox();
+            this.cbLoai = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cashierOrderForm_orderTable = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -59,7 +59,7 @@ namespace HeThongQuanLiHongTraNgoGia
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cashierOrderForm_menuTable)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cashierOrderForm_SoLuong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cashierOrderForm_orderTable)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -97,62 +97,62 @@ namespace HeThongQuanLiHongTraNgoGia
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.cashierOrderForm_clearBtn);
-            this.panel2.Controls.Add(this.cashierOrderForm_removeBtn);
-            this.panel2.Controls.Add(this.cashierOrderForm_addBtn);
+            this.panel2.Controls.Add(this.btnLamMoi);
+            this.panel2.Controls.Add(this.btnXoa);
+            this.panel2.Controls.Add(this.btnThem);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.cashierOrderForm_price);
-            this.panel2.Controls.Add(this.cashierOrderForm_prodName);
-            this.panel2.Controls.Add(this.cashierOrderForm_SoLuong);
+            this.panel2.Controls.Add(this.lblDonGia);
+            this.panel2.Controls.Add(this.lblTenSanPham);
+            this.panel2.Controls.Add(this.numSoLuong);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.cashierOrderForm_productID);
+            this.panel2.Controls.Add(this.cbSanPham);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.cashierOrderForm_Type);
+            this.panel2.Controls.Add(this.cbLoai);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(680, 21);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(299, 336);
             this.panel2.TabIndex = 2;
             // 
-            // cashierOrderForm_clearBtn
+            // btnLamMoi
             // 
-            this.cashierOrderForm_clearBtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.cashierOrderForm_clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cashierOrderForm_clearBtn.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.cashierOrderForm_clearBtn.ForeColor = System.Drawing.Color.White;
-            this.cashierOrderForm_clearBtn.Location = new System.Drawing.Point(190, 224);
-            this.cashierOrderForm_clearBtn.Name = "cashierOrderForm_clearBtn";
-            this.cashierOrderForm_clearBtn.Size = new System.Drawing.Size(93, 39);
-            this.cashierOrderForm_clearBtn.TabIndex = 27;
-            this.cashierOrderForm_clearBtn.Text = "LÀM MỚI";
-            this.cashierOrderForm_clearBtn.UseVisualStyleBackColor = false;
+            this.btnLamMoi.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLamMoi.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.btnLamMoi.ForeColor = System.Drawing.Color.White;
+            this.btnLamMoi.Location = new System.Drawing.Point(190, 224);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(93, 39);
+            this.btnLamMoi.TabIndex = 27;
+            this.btnLamMoi.Text = "LÀM MỚI";
+            this.btnLamMoi.UseVisualStyleBackColor = false;
             // 
-            // cashierOrderForm_removeBtn
+            // btnXoa
             // 
-            this.cashierOrderForm_removeBtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.cashierOrderForm_removeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cashierOrderForm_removeBtn.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.cashierOrderForm_removeBtn.ForeColor = System.Drawing.Color.White;
-            this.cashierOrderForm_removeBtn.Location = new System.Drawing.Point(99, 224);
-            this.cashierOrderForm_removeBtn.Name = "cashierOrderForm_removeBtn";
-            this.cashierOrderForm_removeBtn.Size = new System.Drawing.Size(65, 39);
-            this.cashierOrderForm_removeBtn.TabIndex = 26;
-            this.cashierOrderForm_removeBtn.Text = "XÓA";
-            this.cashierOrderForm_removeBtn.UseVisualStyleBackColor = false;
+            this.btnXoa.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Location = new System.Drawing.Point(99, 224);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(65, 39);
+            this.btnXoa.TabIndex = 26;
+            this.btnXoa.Text = "XÓA";
+            this.btnXoa.UseVisualStyleBackColor = false;
             // 
-            // cashierOrderForm_addBtn
+            // btnThem
             // 
-            this.cashierOrderForm_addBtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.cashierOrderForm_addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cashierOrderForm_addBtn.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            this.cashierOrderForm_addBtn.ForeColor = System.Drawing.Color.White;
-            this.cashierOrderForm_addBtn.Location = new System.Drawing.Point(12, 224);
-            this.cashierOrderForm_addBtn.Name = "cashierOrderForm_addBtn";
-            this.cashierOrderForm_addBtn.Size = new System.Drawing.Size(65, 39);
-            this.cashierOrderForm_addBtn.TabIndex = 25;
-            this.cashierOrderForm_addBtn.Text = "THÊM";
-            this.cashierOrderForm_addBtn.UseVisualStyleBackColor = false;
+            this.btnThem.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.Location = new System.Drawing.Point(12, 224);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(65, 39);
+            this.btnThem.TabIndex = 25;
+            this.btnThem.Text = "THÊM";
+            this.btnThem.UseVisualStyleBackColor = false;
             // 
             // label9
             // 
@@ -164,33 +164,33 @@ namespace HeThongQuanLiHongTraNgoGia
             this.label9.TabIndex = 23;
             this.label9.Text = "Giá ($): ";
             // 
-            // cashierOrderForm_price
+            // lblDonGia
             // 
-            this.cashierOrderForm_price.AutoSize = true;
-            this.cashierOrderForm_price.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cashierOrderForm_price.Location = new System.Drawing.Point(114, 146);
-            this.cashierOrderForm_price.Name = "cashierOrderForm_price";
-            this.cashierOrderForm_price.Size = new System.Drawing.Size(34, 16);
-            this.cashierOrderForm_price.TabIndex = 22;
-            this.cashierOrderForm_price.Text = "100";
+            this.lblDonGia.AutoSize = true;
+            this.lblDonGia.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDonGia.Location = new System.Drawing.Point(114, 146);
+            this.lblDonGia.Name = "lblDonGia";
+            this.lblDonGia.Size = new System.Drawing.Size(34, 16);
+            this.lblDonGia.TabIndex = 22;
+            this.lblDonGia.Text = "100";
             // 
-            // cashierOrderForm_prodName
+            // lblTenSanPham
             // 
-            this.cashierOrderForm_prodName.AutoSize = true;
-            this.cashierOrderForm_prodName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cashierOrderForm_prodName.Location = new System.Drawing.Point(114, 67);
-            this.cashierOrderForm_prodName.Name = "cashierOrderForm_prodName";
-            this.cashierOrderForm_prodName.Size = new System.Drawing.Size(108, 16);
-            this.cashierOrderForm_prodName.TabIndex = 20;
-            this.cashierOrderForm_prodName.Text = "Sản phẩm thử";
+            this.lblTenSanPham.AutoSize = true;
+            this.lblTenSanPham.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenSanPham.Location = new System.Drawing.Point(114, 67);
+            this.lblTenSanPham.Name = "lblTenSanPham";
+            this.lblTenSanPham.Size = new System.Drawing.Size(108, 16);
+            this.lblTenSanPham.TabIndex = 20;
+            this.lblTenSanPham.Text = "Sản phẩm thử";
             // 
-            // cashierOrderForm_SoLuong
+            // numSoLuong
             // 
-            this.cashierOrderForm_SoLuong.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cashierOrderForm_SoLuong.Location = new System.Drawing.Point(117, 187);
-            this.cashierOrderForm_SoLuong.Name = "cashierOrderForm_SoLuong";
-            this.cashierOrderForm_SoLuong.Size = new System.Drawing.Size(94, 24);
-            this.cashierOrderForm_SoLuong.TabIndex = 19;
+            this.numSoLuong.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.numSoLuong.Location = new System.Drawing.Point(117, 187);
+            this.numSoLuong.Name = "numSoLuong";
+            this.numSoLuong.Size = new System.Drawing.Size(94, 24);
+            this.numSoLuong.TabIndex = 19;
             // 
             // label4
             // 
@@ -212,17 +212,17 @@ namespace HeThongQuanLiHongTraNgoGia
             this.label3.TabIndex = 17;
             this.label3.Text = "Tên SP:";
             // 
-            // cashierOrderForm_productID
+            // cbSanPham
             // 
-            this.cashierOrderForm_productID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cashierOrderForm_productID.FormattingEnabled = true;
-            this.cashierOrderForm_productID.Items.AddRange(new object[] {
+            this.cbSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSanPham.FormattingEnabled = true;
+            this.cbSanPham.Items.AddRange(new object[] {
             "Quản trị viên",
             "Thu ngân"});
-            this.cashierOrderForm_productID.Location = new System.Drawing.Point(117, 101);
-            this.cashierOrderForm_productID.Name = "cashierOrderForm_productID";
-            this.cashierOrderForm_productID.Size = new System.Drawing.Size(95, 24);
-            this.cashierOrderForm_productID.TabIndex = 16;
+            this.cbSanPham.Location = new System.Drawing.Point(117, 101);
+            this.cbSanPham.Name = "cbSanPham";
+            this.cbSanPham.Size = new System.Drawing.Size(95, 24);
+            this.cbSanPham.TabIndex = 16;
             // 
             // label2
             // 
@@ -234,17 +234,17 @@ namespace HeThongQuanLiHongTraNgoGia
             this.label2.TabIndex = 15;
             this.label2.Text = "Mã SP:";
             // 
-            // cashierOrderForm_Type
+            // cbLoai
             // 
-            this.cashierOrderForm_Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cashierOrderForm_Type.FormattingEnabled = true;
-            this.cashierOrderForm_Type.Items.AddRange(new object[] {
+            this.cbLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLoai.FormattingEnabled = true;
+            this.cbLoai.Items.AddRange(new object[] {
             "Quản trị viên",
             "Thu ngân"});
-            this.cashierOrderForm_Type.Location = new System.Drawing.Point(117, 18);
-            this.cashierOrderForm_Type.Name = "cashierOrderForm_Type";
-            this.cashierOrderForm_Type.Size = new System.Drawing.Size(167, 24);
-            this.cashierOrderForm_Type.TabIndex = 14;
+            this.cbLoai.Location = new System.Drawing.Point(117, 18);
+            this.cbLoai.Name = "cbLoai";
+            this.cbLoai.Size = new System.Drawing.Size(167, 24);
+            this.cbLoai.TabIndex = 14;
             // 
             // label5
             // 
@@ -367,7 +367,7 @@ namespace HeThongQuanLiHongTraNgoGia
             ((System.ComponentModel.ISupportInitialize)(this.cashierOrderForm_menuTable)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cashierOrderForm_SoLuong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cashierOrderForm_orderTable)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -381,18 +381,18 @@ namespace HeThongQuanLiHongTraNgoGia
         private Label label1;
         private DataGridView cashierOrderForm_menuTable;
         private Panel panel2;
-        private Button cashierOrderForm_clearBtn;
-        private Button cashierOrderForm_removeBtn;
-        private Button cashierOrderForm_addBtn;
+        private Button btnLamMoi;
+        private Button btnXoa;
+        private Button btnThem;
         private Label label9;
-        private Label cashierOrderForm_price;
-        private Label cashierOrderForm_prodName;
-        private NumericUpDown cashierOrderForm_SoLuong;
+        private Label lblDonGia;
+        private Label lblTenSanPham;
+        private NumericUpDown numSoLuong;
         private Label label4;
         private Label label3;
-        private ComboBox cashierOrderForm_productID;
+        private ComboBox cbSanPham;
         private Label label2;
-        private ComboBox cashierOrderForm_Type;
+        private ComboBox cbLoai;
         private Label label5;
         private DataGridView cashierOrderForm_orderTable;
         private Panel panel3;
