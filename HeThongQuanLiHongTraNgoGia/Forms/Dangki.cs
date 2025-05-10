@@ -13,10 +13,10 @@ using TransferObject;
 
 namespace HeThongQuanLiHongTraNgoGia
 {
-   
     public partial class Dangki : Form
     {
         private LoginBL loginBL;
+
         public Dangki()
         {
             InitializeComponent();
@@ -32,7 +32,6 @@ namespace HeThongQuanLiHongTraNgoGia
         {
             DangNhap logiForm = new DangNhap();
             logiForm.Show();
-
             this.Hide();
         }
 
@@ -48,35 +47,43 @@ namespace HeThongQuanLiHongTraNgoGia
             XacnhanMKDK.UseSystemPasswordChar = true;
         }
 
-
-        private void btnDangKy_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnDK_Click(object sender, EventArgs e)
         {
-            string username = DK.Text;
-            string password = MK_DK.Text;
+            string username = DK.Text.Trim();
+            string password = MK_DK.Text.Trim();
+            string confirmPassword = XacnhanMKDK.Text.Trim();
+
+            // Kiểm tra nếu có trường trống
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ tất cả các trường!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Kiểm tra mật khẩu và xác nhận mật khẩu có khớp không
+            if (password != confirmPassword)
+            {
+                MessageBox.Show("Mật khẩu và xác nhận mật khẩu không khớp!", "Lỗi mật khẩu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             Account account = new Account(username, password);
+
             bool success = loginBL.Register(account);
 
             if (success)
             {
-                MessageBox.Show("Đăng ký thành công! Bạn có thể đăng nhập.");
-                this.Close(); // hoặc chuyển sang form đăng nhập
+                MessageBox.Show("Đăng ký thành công! Bạn có thể đăng nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Mở lại form đăng nhập và đóng form đăng ký
+                DangNhap loginForm = new DangNhap();
+                loginForm.Show();
+                this.Hide(); // Ẩn form đăng ký đi
             }
             else
             {
-                MessageBox.Show("Đăng ký thất bại. Vui lòng thử lại.");
-                MessageBox.Show("Register called");
+                MessageBox.Show("Đăng ký thất bại. Tên tài khoản đã tồn tại hoặc có lỗi xảy ra.", "Lỗi đăng ký", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
-    
 }
-
-    
-
- 

@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BangTongQuanDL.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="GiaSanPhamDL.cs" />
