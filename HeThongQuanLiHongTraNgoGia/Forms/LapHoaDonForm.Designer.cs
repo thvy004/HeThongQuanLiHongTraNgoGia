@@ -43,7 +43,7 @@ namespace HeThongQuanLiHongTraNgoGia
             this.numSoLuong = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbSanPham = new System.Windows.Forms.ComboBox();
+            this.cbMaSanPham = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbLoai = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -106,7 +106,7 @@ namespace HeThongQuanLiHongTraNgoGia
             this.panel2.Controls.Add(this.numSoLuong);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.cbSanPham);
+            this.panel2.Controls.Add(this.cbMaSanPham);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.cbLoai);
             this.panel2.Controls.Add(this.label5);
@@ -212,17 +212,18 @@ namespace HeThongQuanLiHongTraNgoGia
             this.label3.TabIndex = 17;
             this.label3.Text = "Tên SP:";
             // 
-            // cbSanPham
+            // cbMaSanPham
             // 
-            this.cbSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSanPham.FormattingEnabled = true;
-            this.cbSanPham.Items.AddRange(new object[] {
+            this.cbMaSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMaSanPham.FormattingEnabled = true;
+            this.cbMaSanPham.Items.AddRange(new object[] {
             "Quản trị viên",
             "Thu ngân"});
-            this.cbSanPham.Location = new System.Drawing.Point(117, 101);
-            this.cbSanPham.Name = "cbSanPham";
-            this.cbSanPham.Size = new System.Drawing.Size(95, 24);
-            this.cbSanPham.TabIndex = 16;
+            this.cbMaSanPham.Location = new System.Drawing.Point(117, 101);
+            this.cbMaSanPham.Name = "cbMaSanPham";
+            this.cbMaSanPham.Size = new System.Drawing.Size(95, 24);
+            this.cbMaSanPham.TabIndex = 16;
+            this.cbMaSanPham.SelectedIndexChanged += new System.EventHandler(this.cbMaSanPham_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -390,7 +391,7 @@ namespace HeThongQuanLiHongTraNgoGia
         private NumericUpDown numSoLuong;
         private Label label4;
         private Label label3;
-        private ComboBox cbSanPham;
+        private ComboBox cbMaSanPham;
         private Label label2;
         private ComboBox cbLoai;
         private Label label5;

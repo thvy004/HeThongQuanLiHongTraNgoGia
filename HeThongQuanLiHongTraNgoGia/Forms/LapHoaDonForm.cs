@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using TransferObject;
+using BusinessLayer;
 
 namespace HeThongQuanLiHongTraNgoGia
 {
@@ -10,14 +13,37 @@ namespace HeThongQuanLiHongTraNgoGia
         public LapHoaDonForm()
         {
             InitializeComponent();
-            this.Load += new EventHandler(LapHoaDonForm_Load); // Đăng ký sự kiện Load
+            this.Load += new EventHandler(LapHoaDonForm_Load);
         }
-
         private void LapHoaDonForm_Load(object sender, EventArgs e)
         {
+            LoadData(); // Gọi LoadData sau khi form đã được khởi tạo
             LoadMenuSanPham();
             LoadChiTietDonHang();
         }
+        // Phương thức load dữ liệu cho combo box
+        private void LoadData()
+        {
+            try
+            {
+                SanPhamBL sanPhamBL = new SanPhamBL();
+
+                // Lấy danh sách loại sản phẩm
+                List<string> danhSachLoai = sanPhamBL.GetDanhSachLoai();
+                cbLoai.DataSource = danhSachLoai;
+
+                // Lấy danh sách mã sản phẩm
+                List<string> danhSachMaSP = sanPhamBL.GetDanhSachMaSP();
+                cbMaSanPham.DataSource = danhSachMaSP;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi load dữ liệu: " + ex.Message);
+            }
+        }
+
+
+        
 
         private void LoadMenuSanPham()
         {
@@ -94,6 +120,14 @@ namespace HeThongQuanLiHongTraNgoGia
         private void cashierOrderForm_orderTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void cbMaSanPham_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbMaSanPham.SelectedItem is SanPhamDTO sanPham)
+            {
+                lblTenSanPham.Text = sanPham.tenSanPham; // Gán tên sản phẩm vào label
+            }
         }
     }
 }
