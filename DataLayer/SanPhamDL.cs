@@ -14,7 +14,10 @@ public class SanPhamDL
         List<SanPhamDTO> sanPhamList = new List<SanPhamDTO>();
         using (SqlConnection connection = new SqlConnection(connString))
         {
-            string query = "SELECT * FROM SanPham";
+            string query = @"
+            SELECT sp.maSanPham, sp.tenSanPham, sp.maLoai, gsp.donGia
+            FROM SanPham sp
+            JOIN GiaSanPham gsp ON sp.maSanPham = gsp.maSanPham";
             SqlCommand cmd = new SqlCommand(query, connection);
             connection.Open();
             SqlDataReader reader = cmd.ExecuteReader();
@@ -24,8 +27,7 @@ public class SanPhamDL
                     Convert.ToInt32(reader["maSanPham"]),
                     reader["tenSanPham"].ToString(),
                     reader["maLoai"].ToString(),
-                    0, // chưa có cột giá
-                    0  // chưa có cột số lượng
+                    Convert.ToDecimal(reader["donGia"])  // Lấy giá từ bảng GiaSanPham
                 );
                 sanPhamList.Add(sanPham);
             }
@@ -109,6 +111,33 @@ public class SanPhamDL
         }
         return danhSach;
     }
+    public SanPhamDTO GetSanPhamTheoMa(int maSP)
+    {
+        SanPhamDTO sanPham = null;
+        using (SqlConnection connection = new SqlConnection(connString))
+        {
+            string query = @"
+            SELECT sp.maSanPham, sp.tenSanPham, sp.maLoai, gsp.donGia
+            FROM SanPham sp
+            JOIN GiaSanPham gsp ON sp.maSanPham = gsp.maSanPham
+            WHERE sp.maSanPham = @maSP";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@maSP", maSP);
+            connection.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                sanPham = new SanPhamDTO(
+                    Convert.ToInt32(reader["maSanPham"]),
+                    reader["tenSanPham"].ToString(),
+                    reader["maLoai"].ToString(),
+                    Convert.ToDecimal(reader["donGia"])
+                );
+            }
+        }
+        return sanPham;
+    }
+
 
 
 

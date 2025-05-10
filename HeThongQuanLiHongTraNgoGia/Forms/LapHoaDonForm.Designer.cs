@@ -49,7 +49,7 @@ namespace HeThongQuanLiHongTraNgoGia
             this.label5 = new System.Windows.Forms.Label();
             this.cashierOrderForm_orderTable = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.cashierOrderForm_payBtn = new System.Windows.Forms.Button();
+            this.btnThanhToan = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.cashierOrderForm_change = new System.Windows.Forms.Label();
             this.cashierOrderForm_amount = new System.Windows.Forms.TextBox();
@@ -269,7 +269,7 @@ namespace HeThongQuanLiHongTraNgoGia
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.cashierOrderForm_payBtn);
+            this.panel3.Controls.Add(this.btnThanhToan);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.cashierOrderForm_change);
             this.panel3.Controls.Add(this.cashierOrderForm_amount);
@@ -282,18 +282,18 @@ namespace HeThongQuanLiHongTraNgoGia
             this.panel3.Size = new System.Drawing.Size(962, 292);
             this.panel3.TabIndex = 1;
             // 
-            // cashierOrderForm_payBtn
+            // btnThanhToan
             // 
-            this.cashierOrderForm_payBtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.cashierOrderForm_payBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cashierOrderForm_payBtn.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cashierOrderForm_payBtn.ForeColor = System.Drawing.Color.White;
-            this.cashierOrderForm_payBtn.Location = new System.Drawing.Point(691, 186);
-            this.cashierOrderForm_payBtn.Name = "cashierOrderForm_payBtn";
-            this.cashierOrderForm_payBtn.Size = new System.Drawing.Size(239, 43);
-            this.cashierOrderForm_payBtn.TabIndex = 41;
-            this.cashierOrderForm_payBtn.Text = "THANH TOÁN";
-            this.cashierOrderForm_payBtn.UseVisualStyleBackColor = false;
+            this.btnThanhToan.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThanhToan.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThanhToan.ForeColor = System.Drawing.Color.White;
+            this.btnThanhToan.Location = new System.Drawing.Point(691, 186);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(239, 43);
+            this.btnThanhToan.TabIndex = 41;
+            this.btnThanhToan.Text = "THANH TOÁN";
+            this.btnThanhToan.UseVisualStyleBackColor = false;
             // 
             // label12
             // 
@@ -396,7 +396,7 @@ namespace HeThongQuanLiHongTraNgoGia
         private Label label5;
         private DataGridView cashierOrderForm_orderTable;
         private Panel panel3;
-        private Button cashierOrderForm_payBtn;
+        private Button btnThanhToan;
         private Label label12;
         private Label cashierOrderForm_change;
         private TextBox cashierOrderForm_amount;
