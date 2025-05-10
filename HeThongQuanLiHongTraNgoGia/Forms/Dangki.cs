@@ -25,7 +25,12 @@ namespace HeThongQuanLiHongTraNgoGia
 
         private void thoat_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult check = MessageBox.Show("Bạn có chắc chắn muốn thoát chương trình không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (check == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void DK_btnDN_Click(object sender, EventArgs e)
