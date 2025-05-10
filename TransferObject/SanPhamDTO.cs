@@ -12,6 +12,8 @@ namespace TransferObject
         public string maLoai { get; set; }
         public decimal donGia { get; set; }  // Thêm dòng này cho đơn giá
         public int soLuongTon { get; set; }  // Thêm dòng này nếu cần
+        public int soLuong { get; set; }  // Số lượng khách mua
+
 
         public SanPhamDTO(int id, string name, string type, decimal price)
         {

@@ -10,6 +10,8 @@ namespace HeThongQuanLiHongTraNgoGia
 {
     public partial class LapHoaDonForm : UserControl
     {
+        private List<SanPhamDTO> danhSachSanPham = new List<SanPhamDTO>();
+
         public LapHoaDonForm()
         {
             InitializeComponent();
@@ -31,10 +33,12 @@ namespace HeThongQuanLiHongTraNgoGia
                 // Lấy danh sách loại sản phẩm
                 List<string> danhSachLoai = sanPhamBL.GetDanhSachLoai();
                 cbLoai.DataSource = danhSachLoai;
+                cbLoai.SelectedIndex = -1;  // Đảm bảo không chọn mặc định
 
                 // Lấy danh sách mã sản phẩm
                 List<string> danhSachMaSP = sanPhamBL.GetDanhSachMaSP();
                 cbMaSanPham.DataSource = danhSachMaSP;
+                cbMaSanPham.SelectedIndex = -1;  // Đảm bảo không chọn mặc định
             }
             catch (Exception ex)
             {
@@ -124,11 +128,77 @@ namespace HeThongQuanLiHongTraNgoGia
 
         private void cbMaSanPham_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbMaSanPham.SelectedItem is SanPhamDTO sanPham)
+            try
             {
-                lblTenSanPham.Text = sanPham.tenSanPham; // Gán tên sản phẩm vào label
+                // Kiểm tra nếu SelectedItem có giá trị
+                if (cbMaSanPham.SelectedItem != null)
+                {
+                    // Lấy giá trị mã sản phẩm từ SelectedItem
+                    string maSanPhamString = cbMaSanPham.SelectedItem.ToString();
+
+                    // Kiểm tra nếu giá trị có thể chuyển đổi thành int
+                    if (int.TryParse(maSanPhamString, out int maSanPham))
+                    {
+                        // Lấy sản phẩm theo mã
+                        SanPhamBL sanPhamBL = new SanPhamBL();
+                        SanPhamDTO sanPham = sanPhamBL.GetSanPhamTheoMa(maSanPham);
+
+                        if (sanPham != null)
+                        {
+                            // Hiển thị thông tin sản phẩm
+                            lblTenSanPham.Text = sanPham.tenSanPham; // Ví dụ, gán tên sản phẩm vào label
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy sản phẩm!");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Mã sản phẩm không hợp lệ.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            if (danhSachSanPham.Count == 0)
+            {
+                MessageBox.Show("Chưa có sản phẩm nào trong đơn hàng.");
+                return;
+            }
+
+            decimal tongTien = TinhTongTien();
+            MessageBox.Show($"Tổng tiền: {tongTien:C}", "Xác nhận thanh toán", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // TODO: Thêm code lưu đơn hàng vào CSDL nếu cần
+
+            // Reset sau khi thanh toán
+            danhSachSanPham.Clear();
+            cashierOrderForm_orderTable.Rows.Clear(); // nếu bạn có DataGridView
+        }
+
+        // Phương thức tính tổng tiền
+        private decimal TinhTongTien()
+        {
+            decimal tong = 0;
+            foreach (SanPhamDTO sp in danhSachSanPham)
+            {
+                tong += sp.soLuong * sp.donGia;
+            }
+            return tong;
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-}
+    }
+
 

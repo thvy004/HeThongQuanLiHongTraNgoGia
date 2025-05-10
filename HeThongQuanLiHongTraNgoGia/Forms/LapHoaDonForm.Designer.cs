@@ -153,6 +153,7 @@ namespace HeThongQuanLiHongTraNgoGia
             this.btnThem.TabIndex = 25;
             this.btnThem.Text = "THÊM";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // label9
             // 
@@ -295,6 +296,7 @@ namespace HeThongQuanLiHongTraNgoGia
             this.btnThanhToan.TabIndex = 41;
             this.btnThanhToan.Text = "THANH TOÁN";
             this.btnThanhToan.UseVisualStyleBackColor = false;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // label12
             // 
