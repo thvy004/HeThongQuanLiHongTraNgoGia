@@ -8,6 +8,7 @@ namespace HeThongQuanLiHongTraNgoGia
 {
     internal static class Program
     {
+        //hello ae 
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
