@@ -15,11 +15,11 @@ namespace HeThongQuanLiHongTraNgoGia
 
         private void LapHoaDonForm_Load(object sender, EventArgs e)
         {
-            MenuSanPham();
+            LoadMenuSanPham();
             LoadChiTietDonHang();
         }
 
-        private void MenuSanPham()
+        private void LoadMenuSanPham()
         {
             string connectionString = "Server=localhost;Database=HongTraNgoGia;Trusted_Connection=True;";
 
