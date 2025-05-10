@@ -45,6 +45,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -85,6 +87,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.comboBox2);
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.adminAddUsers_deleteBtn);
             this.panel2.Controls.Add(this.adminAddUsers_updateBtn);
             this.panel2.Controls.Add(this.adminAddUsers_addBtn);
@@ -117,6 +121,7 @@
             this.adminAddUsers_deleteBtn.TabIndex = 23;
             this.adminAddUsers_deleteBtn.Text = "XÓA";
             this.adminAddUsers_deleteBtn.UseVisualStyleBackColor = false;
+            this.adminAddUsers_deleteBtn.Click += new System.EventHandler(this.adminAddUsers_deleteBtn_Click);
             // 
             // adminAddUsers_updateBtn
             // 
@@ -131,6 +136,7 @@
             this.adminAddUsers_updateBtn.TabIndex = 22;
             this.adminAddUsers_updateBtn.Text = "SỬA";
             this.adminAddUsers_updateBtn.UseVisualStyleBackColor = false;
+            this.adminAddUsers_updateBtn.Click += new System.EventHandler(this.adminAddUsers_updateBtn_Click);
             // 
             // adminAddUsers_addBtn
             // 
@@ -150,7 +156,7 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(1021, 125);
+            this.textBox3.Location = new System.Drawing.Point(1012, 185);
             this.textBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(270, 30);
@@ -160,7 +166,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(853, 121);
+            this.label6.Location = new System.Drawing.Point(834, 190);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(106, 25);
@@ -170,7 +176,7 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(1021, 60);
+            this.textBox4.Location = new System.Drawing.Point(1012, 119);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(270, 30);
@@ -180,7 +186,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(723, 61);
+            this.label7.Location = new System.Drawing.Point(732, 122);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(241, 25);
@@ -251,6 +257,30 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Mã sản phẩm: ";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(888, 56);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 25);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Loại:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Quản trị viên",
+            "Thu ngân"});
+            this.comboBox2.Location = new System.Drawing.Point(1012, 48);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(270, 33);
+            this.comboBox2.TabIndex = 25;
+            // 
             // QuanLySanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -288,5 +318,7 @@
         private System.Windows.Forms.Button adminAddUsers_deleteBtn;
         private System.Windows.Forms.Button adminAddUsers_updateBtn;
         private System.Windows.Forms.Button adminAddUsers_addBtn;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label4;
     }
 }
